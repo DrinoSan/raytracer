@@ -10,6 +10,8 @@ int main()
     // Render
     for ( int j = 0; j < imageHeight; ++j )
     {
+        std::clog << "\rScanlines remaining: " << ( imageHeight - j ) << ' '
+                  << std::flush;
         for ( int i = 0; i < imageWidth; ++i )
         {
             // Getting position relative to image dimension
@@ -24,4 +26,5 @@ int main()
             std::cout << ir << ' ' << ig << ' ' << ib << '\n';
         }
     }
+    std::clog << "\rDone.                 \n";
 }
